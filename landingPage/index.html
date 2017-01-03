@@ -11,8 +11,10 @@
 
     <title>Community Manager</title>
 
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" rel="stylesheet">
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -71,9 +73,9 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Your Favorite Source of Free Bootstrap Themes</h1>
+                <h1 id="homeHeading">Best Software to manage and run apartment community</h1>
                 <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+                <p>CMS solution geared towards needs of apartment complex and communities</p>
                 <a id = "hrefGetStarted" class="btn btn-primary btn-xl page-scroll">Get Started</a>
             </div>
         </div>
@@ -261,8 +263,21 @@
         </div>
     </section>
 
-    <!--Pop Up form-->
-    <div id = "form">
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                <!--</div>-->
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div id="form">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- jQuery -->
@@ -289,26 +304,32 @@
     <script>
         $("#hrefGetStarted").click(
                 function(){
-                    alert('i am here');
                     $('#form').empty();
                     $("#form").alpaca({
                         "schema": {
-                            "title": "What do you think of Alpaca?",
+                            "title": "You are almost done !",
+                            "description":"Complete the details below and you will be immediately redirected to your new website.",
                             "type": "object",
                             "properties": {
                                 "name": {
                                     "type": "string",
-                                    "title": "Name"
+                                    "title": "Choose a website address",
+                                    "required":true
                                 },
-                                "ranking": {
+                                "email": {
                                     "type": "string",
-                                    "title": "Ranking",
-                                    "enum": ['excellent', 'not too shabby', 'alpaca built my hotrod']
+                                    "title": "Your email address",
+                                    "required":true
+                                },
+                                "password": {
+                                    "format": "password",
+                                    "title": "Create a password ",
+                                    "required":true
                                 }
                             }
                         }
                     });
-                    $('#form').modal('show');
+                    $('#myModal').modal('show');
 
                 }
         )
