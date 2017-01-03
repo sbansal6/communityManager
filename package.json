@@ -2,6 +2,10 @@
   "name": "application-name",
   "version": "0.0.1",
   "dependencies": {
-    "joi": "^10.1.0"
+    "acl": "^0.4.9",
+    "async": "^2.1.4",
+    "joi": "^10.1.0",
+    "mongodb": "^2.2.19",
+    "mongoose": "^4.7.6"
   }
 }
