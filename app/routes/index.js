@@ -9,7 +9,7 @@ module.exports = function(app, isLoggedIn) {
      * 2) Create new community and assign user to createdBy attribute
      */
     app.post("/newsignup",isLoggedIn,function(){
-        
+
     })
 
 }

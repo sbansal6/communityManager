@@ -1,11 +1,10 @@
 'use strict';
+require('dotenv').config({path: __dirname + '/../../.env'});
 
-let Acl = require('acl');
+const Acl = require('acl');
 const async = require('async');
 const mongodb  = require('mongodb');
-const config = require('../../config/default');
-const connection = "mongodb://" + config.mongo.host + ":" + config.mongo.port + "/" + config.mongo.database;
-
+const connection = "mongodb://" + process.env.DB_HOST + ":" + process.env.DB_PORT + "/" + process.env.DB_NAME;
 
 module.exports = function(cb){
     mongodb.connect(connection,function(err,db){

@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
-const config = require('../../config/default');
+require('dotenv').config({path: __dirname + '/../../.env'});
 
-const connection = "mongodb://" + config.mongo.host + ":" + config.mongo.port + "/" + config.mongo.database;
+const mongoose = require('mongoose');
+const connection = "mongodb://" + process.env.DB_HOST + ":" + process.env.DB_PORT + "/" + process.env.DB_NAME;
 
 module.exports = function(cb){
     mongoose.connect(connection, function(err) {

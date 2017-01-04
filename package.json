@@ -5,8 +5,12 @@
     "acl": "^0.4.9",
     "async": "^2.1.4",
     "bcrypt-nodejs": "0.0.3",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "express-winston": "^2.1.2",
     "joi": "^10.1.0",
     "mongodb": "^2.2.19",
-    "mongoose": "^4.7.6"
+    "mongoose": "^4.7.6",
+    "winston": "^2.3.0"
   }
 }
