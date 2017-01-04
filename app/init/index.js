@@ -19,9 +19,3 @@ const init  = function(cb){
  * @param cb
  */
 module.exports =  init;
-
-init(function(err,result){
-    "use strict";
-    console.log('err',err);
-    console.log('result',result);
-})

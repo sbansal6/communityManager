@@ -1,10 +1,13 @@
-const Joi = require('joi');
+const mongoose = require('mongoose');
 
-const Community =  {
-    name: Joi.string().required(),
-    createdBy:Joi.string().required(),
-    createdDate:Joi.string().required(),
-};
+const communitySchema = mongoose.Schema({
+    name: String,
+    websiteAddress: String,
+    physicalAddress:String,
+    createDate: { type: Date, default: Date.now },
+    createdBy : String // ref user
+});
 
-module.exports = Community;
+module.exports = mongoose.model('Community', communitySchema);
+
 

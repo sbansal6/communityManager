@@ -19,6 +19,7 @@ module.exports = function(cb){
                 if (err) {
                     cb(err);
                 } else {
+                    // Roles Created by system
                     acl.allow('communityAdmin', ['/'], '*');
                     acl.allow('communityUser', ['/'], ['view', 'edit']);
                     acl.allow('internalAdmin', ['/'], '*');

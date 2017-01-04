@@ -1,3 +1,15 @@
-/**
- * Created by saurabhbansal on 1/2/17.
- */
+
+const addUser = function(){
+    "use strict";
+
+}
+
+const editUser = function(){
+    "use strict";
+
+}
+
+const deleteUser = function(){
+    "use strict";
+
+}

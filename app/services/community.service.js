@@ -4,3 +4,18 @@
  * Add - delete objects to from communities
  */
 
+
+const addCommunity =  function(communityInfo,cb){
+    "use strict";
+
+}
+
+const editCommunity = function () {
+
+}
+
+
+const deleteCommunity = function() {
+    "use strict";
+
+}
