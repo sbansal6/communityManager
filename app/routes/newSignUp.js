@@ -8,7 +8,9 @@ module.exports = function(app) {
      * 2) Create new community and assign user to createdBy attribute
      */
     app.get("/newsignup",function(req,res){
-        res.write('newsignup is up and running');
+        res.send({
+            status:"newsignup is up and running"
+        });
         res.end();
     })
 
