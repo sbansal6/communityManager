@@ -1,15 +1,10 @@
+"use strict";
+module.exports = function (app) {
 
+    app.get('/', function(req, res, next) {
+        res.write('App is up and running');
+        res.end();
+    });
 
-module.exports = function(app, isLoggedIn) {
-    "use strict";
-
-    /**
-     * Handle new sign up
-     * 1) Create new User
-     * 2) Create new community and assign user to createdBy attribute
-     */
-    app.post("/newsignup",isLoggedIn,function(){
-
-    })
-
+    require('./newSignUp')(app);
 }

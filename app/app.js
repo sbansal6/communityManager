@@ -5,6 +5,7 @@ const winston = require('winston'); // for transports.Console
 const app = module.exports = express();
 const dbInit = require('./init/db.init');
 const aclInit = require('./init/acl.init');
+const routes = require('./routes');
 
 const initApp = function (cb) {
     async.waterfall([
@@ -43,10 +44,7 @@ const initApp = function (cb) {
         // routes
         function(cb){
             // add routes to app
-            app.get('/', function(req, res, next) {
-                res.write('This is a normal request, it should be logged to the console too');
-                res.end();
-            });
+            require('./routes')(app);
             cb();
         },
         // error logger
