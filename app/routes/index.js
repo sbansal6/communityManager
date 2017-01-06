@@ -5,5 +5,9 @@ module.exports = function (app) {
         res.render('home');
     });
 
+    app.get('/setup', function(req, res, next) {
+        res.render('setup');
+    });
+
     require('./newSignUp')(app);
 }
