@@ -1,8 +1,10 @@
 const async = require('async');
 const express = require('express');
+const path = require('path');
 const expressWinston = require('express-winston');
 const winston = require('winston'); // for transports.Console
 const app = module.exports = express();
+const exphbs = require('express-handlebars');
 const dbInit = require('./init/db.init');
 const aclInit = require('./init/acl.init');
 const routes = require('./routes');
@@ -21,6 +23,15 @@ const initApp = function (cb) {
         function(acl,cb){
             // add acl to app
             app.locals.acl = acl;
+            app.set('views', path.join(__dirname, '/../app/views'));
+            app.engine('.hbs', exphbs({
+                defaultLayout: 'single',
+                extname: '.hbs',
+                layoutsDir:'app/views/layouts',
+                partialsDir:'app/views/partials'
+            }));
+            app.set('view engine', '.hbs');
+            app.use(express.static('public'));
             cb()
         },
         // request logger

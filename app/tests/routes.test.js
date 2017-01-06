@@ -32,4 +32,8 @@ describe('Routes.Test',function(){
         })
     })
 
+    describe('/newsignup',function(){
+
+    })
+
 })

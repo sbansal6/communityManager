@@ -1,11 +1,8 @@
 "use strict";
 module.exports = function (app) {
 
-    app.get('/', function(req, res, next) {
-        res.send({
-            status:"app is up and running"
-        });
-        res.end();
+    app.get('/home', function(req, res, next) {
+        res.render('home');
     });
 
     require('./newSignUp')(app);
