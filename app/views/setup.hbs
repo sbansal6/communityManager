@@ -16,16 +16,155 @@
         <div class="row">
             <div class="col-md-2">
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Buildings</a>
-                    <a href="#" class="list-group-item">Floors</a>
+                    <a id="aBuilding" href="#" class="list-group-item active">Buildings</a>
+                    <a id="aFloors" href="#" class="list-group-item">Floors</a>
                     <a href="#" class="list-group-item">Units</a>
                     <a href="#" class="list-group-item">Users</a>
                     <a href="#" class="list-group-item">Ameneties</a>
                 </div>
             </div>
             <div class="col-md-10">
+                <div id="form">
 
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
+<!--handle active class on other items-->
+<script>
+    $('.list-group-item').on('click', function() {
+        var $this = $(this);
+        $('.active').removeClass('active');
+        $this.toggleClass('active')
+    })
+</script>
+
+<script>
+    // check for active list
+    // get list name on click and then load form dynamically
+    $('#form').empty();
+    $("#form").alpaca({
+        "data": [{
+            "key": "key1",
+            "title": "title1",
+            "amount": 2.53
+        }, {
+            "key": "key2",
+            "title": "title2",
+            "amount": 1.80
+        }, {
+            "key": "key3",
+            "title": "title3",
+            "amount": 5.60
+        }],
+        "schema": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "title": "BuildingId"
+                    },
+                    "title": {
+                        "type": "string",
+                        "title": "Title"
+                    },
+                    "amount": {
+                        "type": "number",
+                        "title": "Amount"
+                    }
+                }
+            }
+        },
+        "options": {
+            "type": "table"
+        }
+    });
+    $('#aBuilding').click(function(){
+        $('#form').empty();
+        $("#form").alpaca({
+            "data": [{
+                "key": "key1",
+                "title": "title1",
+                "amount": 2.53
+            }, {
+                "key": "key2",
+                "title": "title2",
+                "amount": 1.80
+            }, {
+                "key": "key3",
+                "title": "title3",
+                "amount": 5.60
+            }],
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "title": "BuildingId"
+                        },
+                        "title": {
+                            "type": "string",
+                            "title": "Title"
+                        },
+                        "amount": {
+                            "type": "number",
+                            "title": "Amount"
+                        }
+                    }
+                }
+            },
+            "options": {
+                "type": "table"
+            }
+        });
+    });
+    $('#aFloors').click(function(){
+        $('#form').empty();
+        $("#form").alpaca({
+            "data": [{
+                "key": "key1",
+                "title": "title1",
+                "amount": 2.53
+            }, {
+                "key": "key2",
+                "title": "title2",
+                "amount": 1.80
+            }, {
+                "key": "key3",
+                "title": "title3",
+                "amount": 5.60
+            }],
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "title": "Floor Id"
+                        },
+                        "title": {
+                            "type": "string",
+                            "title": "Title"
+                        },
+                        "amount": {
+                            "type": "number",
+                            "title": "Amount"
+                        }
+                    }
+                }
+            },
+            "options": {
+                "type": "table"
+            }
+        });
+    });
+</script>

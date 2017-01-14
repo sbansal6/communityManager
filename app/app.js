@@ -12,17 +12,17 @@ const routes = require('./routes');
 const initApp = function (cb) {
     async.waterfall([
         // mongodb init
-        function(cb){
-            dbInit(cb)
-        },
-        // acl init
-        function(cb){
-            aclInit(cb)
-        },
+        // function(cb){
+        //     dbInit(cb)
+        // },
+        // // acl init
+        // function(cb){
+        //     aclInit(cb)
+        // },
         // app bootstrap
-        function(acl,cb){
+        function(cb){
             // add acl to app
-            app.locals.acl = acl;
+            //app.locals.acl = acl;
             app.set('views', path.join(__dirname, '/../app/views'));
             app.engine('.hbs', exphbs({
                 defaultLayout: 'single',
